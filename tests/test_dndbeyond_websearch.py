@@ -24,6 +24,7 @@ class SearcherTestCase(TestCase):
 
         first = results[0]
         self.assertEqual(first.title, 'Cast a Spell')
+        self.assertEqual(first.url, 'https://www.dndbeyond.com/compendium/rules/phb/combat#CastaSpell')
         self.assertEqual(first.breadcrumbs.upper(), "COMPENDIUM - COMPENDIUM->RULES->PLAYER'S HANDBOOK")
         self.assertEqual(len([s for s in first.snippets if s is not None]), 2)
 

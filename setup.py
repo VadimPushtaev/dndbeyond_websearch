@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='dndbeyond_websearch',
-    version='0.1',
+    version='0.2',
     packages=['dndbeyond_websearch'],
     install_requires=['requests', 'beautifulsoup4'],
     url='https://github.com/VadimPushtaev/dndbeyond_websearch',
