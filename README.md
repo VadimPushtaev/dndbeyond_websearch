@@ -1,6 +1,11 @@
 dndbeyond_websearch
 ===================
 
+Install
+-------
+
+`pip install dndbeyond-websearch`
+
 Example
 -------
 
