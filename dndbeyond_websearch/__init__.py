@@ -65,11 +65,14 @@ class Parser:
 
 
 class Searcher:
-    DNDBEYOND_SEARCH_URL_PATTERN = 'https://www.dndbeyond.com/search?q={}'
+    DNDBEYOND_SEARCH_URL = 'https://www.dndbeyond.com/search'
+    DNDBEYOND_SEARCH_QUERY_PARAM = 'q'
 
     def __init__(self):
         self._parser = Parser()
 
     def search(self, query):
-        response = requests.get(self.DNDBEYOND_SEARCH_URL_PATTERN.format(query))
+        response = requests.get(
+            self.DNDBEYOND_SEARCH_URL, params={self.DNDBEYOND_SEARCH_QUERY_PARAM: query},
+        )
         return self._parser.extract_results(response.content)

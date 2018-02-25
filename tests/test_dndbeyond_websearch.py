@@ -18,7 +18,7 @@ class SearcherTestCase(TestCase):
     def test_extract_result(self, mocked_requests):
         mocked_requests.get.return_value = namedtuple('Result', 'content')(content=self._html)
         results = self._searcher.search('cast a spell')
-        mocked_requests.get.assert_called_with('https://www.dndbeyond.com/search?q=cast a spell')
+        mocked_requests.get.assert_called_with('https://www.dndbeyond.com/search', params=dict(q='cast a spell'))
 
         self.assertEqual(len(results), 35)
 
